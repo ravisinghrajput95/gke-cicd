@@ -2,7 +2,7 @@ module "gke_autopilot" {
   source  = "terraform-google-modules/kubernetes-engine/google//modules/beta-autopilot-private-cluster"
   version = "~> 32.0"
 
-  project_id         = var.project_id
+  project_id        = var.project_id
   name              = var.cluster_name
   region            = var.region
   zones             = ["${var.region}-a", "${var.region}-b", "${var.region}-c"] # Regional cluster
@@ -16,7 +16,7 @@ module "gke_autopilot" {
   master_ipv4_cidr_block = var.master_ipv4_cidr
 
   # Networking: VPC-native
-  http_load_balancing      = true
+  http_load_balancing        = true
   horizontal_pod_autoscaling = true
 
   # Security: Binary Authorization

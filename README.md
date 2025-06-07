@@ -7,11 +7,6 @@ This is a sample Python Flask application deployed to **Google Kubernetes Engine
 > Hosted on GKE  
 > GitHub-triggered CI/CD pipeline
 
----
-
-
----
-
 ## How the Pipeline Works
 
 1. Developer pushes code to **GitHub**.
@@ -22,10 +17,6 @@ This is a sample Python Flask application deployed to **Google Kubernetes Engine
    - Applies K8s configs to redeploy the app to **GKE**.
 4. The updated app becomes available via a public LoadBalancer IP.
 
-![Architecture](https://storage.googleapis.com/gke-cicd-demo/diagram.png)
-
----
-
 ## Prerequisites
 
 - Google Cloud Project with billing enabled
@@ -35,8 +26,6 @@ This is a sample Python Flask application deployed to **Google Kubernetes Engine
   - Cloud Build → GKE Deployer
   - Cloud Build → Container Registry Push
 - GitHub Repo with Cloud Build Trigger configured
-
----
 
 ##  Deploy Steps
 
