@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: gcr.io/burnished-yeti-454716-r0/flask-app:latest   # fixed full image path with registry prefix
+        image: gcr.io/burnished-yeti-454716-r0/flask-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
       imagePullSecrets:
