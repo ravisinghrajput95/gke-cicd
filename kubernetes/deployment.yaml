@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: flask-app/burnished-yeti-454716-r0/flask-app:latest
-        imagePullSecrets:
-        - name: gcr-json-key
+        image: gcr.io/burnished-yeti-454716-r0/flask-app:latest   # fixed full image path with registry prefix
         ports:
         - containerPort: 5000
+      imagePullSecrets:
+      - name: gcr-json-key
