@@ -1,0 +1,68 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+*.tfstate.lock.info
+.terraform/
+.terraform.lock.hcl
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+terraform.tfvars
+terraform.tfvars.json
+
+# Credentials and secrets
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+*.secret
+*.secrets
+*.token
+*.password
+
+# Local environment files
+.env
+*.local
+
+# Temporary files
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+crash.log
+crash.*.log
+
+# Editor/IDE files
+.idea/
+*.iml
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency directories
+vendor/
+modules/
+
+# Build artifacts
+*.zip
+*.tar.gz
+*.tgz
+
+# Testing and coverage
+*.test
+coverage
