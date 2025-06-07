@@ -1,17 +1,9 @@
-data "google_client_config" "default" {}
-
-provider "kubernetes" {
-  host                   = "https://${module.gke_standard.endpoint}"
-  token                  = data.google_client_config.default.access_token
-  cluster_ca_certificate = base64decode(module.gke_standard.ca_certificate)
-}
-
 # GKE Standard Cluster using Terraform Module
 module "gke_standard" {
   source  = "terraform-google-modules/kubernetes-engine/google"
   version = "36.3.0"
 
-  project_id         = var.project_id
+  project_id        = var.project_id
   name              = var.cluster_name
   region            = var.region
   zones             = ["${var.region}-a", "${var.region}-b", "${var.region}-c"] # Regional cluster
@@ -19,17 +11,14 @@ module "gke_standard" {
   subnetwork        = var.subnetwork
   ip_range_pods     = var.ip_range_pods
   ip_range_services = var.ip_range_services
-  #enable_private_nodes    = true 
-  #enable_private_endpoint = false
-  #master_ipv4_cidr_block  = var.master_ipv4_cidr
 
 
   # Networking: VPC-native and Network Policies
-  http_load_balancing      = true
-  network_policy           = true
+  http_load_balancing        = true
+  network_policy             = true
   horizontal_pod_autoscaling = true
 
-  # Security: Workload Identity and Binary Authorization
+  # Security: Binary Authorization
   enable_binary_authorization = true
 
   # Release Channel and Maintenance
