@@ -15,5 +15,7 @@ spec:
       containers:
       - name: flask-app
         image: flask-app/burnished-yeti-454716-r0/flask-app:latest
+        imagePullSecrets:
+        - name: gcr-json-key
         ports:
         - containerPort: 5000
