@@ -23,9 +23,9 @@ steps:
       - 'CLOUDSDK_COMPUTE_REGION=us-central1'
       - 'CLOUDSDK_CONTAINER_CLUSTER=standard-gke-cluster'
 
-  # Step 4: Apply Kubernetes manifest
+  # Step 4: Apply Kubernetes manifests
   - name: 'gcr.io/cloud-builders/kubectl'
-    args: ['apply', '-f', 'kubernetes.yaml']
+    args: ['apply', '-f', 'kubernetes/deployment.yaml', '-f', 'kubernetes/service.yaml']
     env:
       - 'CLOUDSDK_COMPUTE_REGION=us-central1'
       - 'CLOUDSDK_CONTAINER_CLUSTER=standard-gke-cluster'
