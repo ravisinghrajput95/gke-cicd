@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: gcr.io/burnished-yeti-454716-r0/flask-app:latest
+        image: gcr.io/silent-presence-463914-s2/flask-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
