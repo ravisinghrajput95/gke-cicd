@@ -2,7 +2,7 @@
 variable "project_id" {
   description = "Google Cloud project ID"
   type        = string
-  default     = "burnished-yeti-454716-r0"
+  default     = "spry-climber-463817-u7"
 }
 
 variable "region" {
