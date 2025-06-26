@@ -41,18 +41,6 @@ module "gke_standard" {
       enable_secure_boot = true
     },
     {
-      name               = "gpu-node-pool"
-      machine_type       = "n1-standard-4"
-      min_count          = 0
-      max_count          = 2
-      disk_size_gb       = 100
-      auto_repair        = true
-      auto_upgrade       = true
-      enable_secure_boot = true
-      accelerator_count  = 1
-      accelerator_type   = "nvidia-tesla-t4"
-    },
-    {
       name               = "preemptible-node-pool"
       machine_type       = "e2-medium"
       min_count          = 0
@@ -70,21 +58,8 @@ module "gke_standard" {
     "default-node-pool" = {
       workload = "general"
     }
-    "gpu-node-pool" = {
-      workload = "gpu"
-    }
     "preemptible-node-pool" = {
       workload = "cost-optimized"
     }
-  }
-
-  node_pools_taints = {
-    "gpu-node-pool" = [
-      {
-        key    = "workload"
-        value  = "gpu"
-        effect = "NO_SCHEDULE"
-      }
-    ]
   }
 }
